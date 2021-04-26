@@ -3,53 +3,92 @@
     box-sizing: border-box;
 }
 
+/*-----------------------------------
+Global Styles */
+
 body {
-    margin: 0px;
+    margin: 0;
     font-family: IBM Plex Serif;
     font-weight: 300;
-    line-height: 1.2em;
+    /* line-height: 1.2em; */
     background-image: linear-gradient(#84DCF0, #EDD9DA)}
-header, section {
-    padding: 20px;
+
+header {
+  padding-left: 15px;
 }
+
+section {
+    padding: 15px;
+}
+
 p, li {
     line-height: 1.3em;
 }
+
 h1 {
     font-family: IBM Plex Serif;
     font-weight: 500;
+    margin: 0;
 }
+
 h2 {
     font-family: IBM Plex Serif;
     font-weight: 400;
+    margin-top: 0;
+    margin-bottom: 10px;
 }
+
 h3 {
     font-family: IBM Plex Serif;
-    font-weight: 350;
+    font-weight: 300;
 }
+
+/*-----------------------------------
+Tutorial Styles */
+
+/*-----------------------------------
+Homework Styles */
+
 .cards {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    width: 100%
+    grid-template-columns: 1fr, 1fr, 1fr, 1fr;
+    grid-template-areas:
+    "a b c d";
 }
+
 .card {
-    width: 15vw;
-    padding: 0px;
+    /* width: 15vw; */
+    /* padding: 5px; */
     background-color: #F54845;
     text-align: center;
     border-radius: 10px;
+    margin: 15px;
 }
+
+.hw01 {
+  grid-area: a;
+}
+
+.hw02 {
+  grid-area: b;
+}
+
 .card > div {
     border: solid 1px #CCC;
     padding: 10px;
     border-radius: 10px;
+    height: 100%;
 }
+
 .card:hover > div {
     border: solid 3px black;
     padding: 8px;
     background-color: #F573EE;
 }
 
-/* Inspiration Section */
+/*-----------------------------------
+Inspiration Styles */
 
 #inspiration {
     background-color: #F0F0F0;
@@ -99,3 +138,5 @@ h3 {
   color: black;
   font-weight: bold;
 }
+
+@media
