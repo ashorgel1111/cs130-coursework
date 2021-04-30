@@ -46,6 +46,15 @@ h3 {
 /*-----------------------------------
 Tutorial Styles */
 
+#tutorials p {
+  margin: 0;
+}
+
+#tutorials ul {
+  margin: 5px;
+  padding-left: 30px;
+}
+
 /*-----------------------------------
 Homework Styles */
 
