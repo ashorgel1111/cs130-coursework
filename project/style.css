@@ -1,0 +1,52 @@
+/* Borders are currently included for debugging purposes */
+
+* {
+  border: solid 1px black;
+  margin: 0;
+}
+
+/* Header */
+
+#titles {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  position: fixed;
+  width: 100vw;
+  padding-bottom: 5px;
+}
+
+#titles p {
+  width: 30%;
+  display: flex;
+  justify-content: center;
+  border: none;
+
+}
+
+/* Main */
+
+main {
+  margin-top: 40px;
+  border: none;
+}
+
+/* Welcome */
+
+#welcome {
+  border: none;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#welcome p {
+  width: 80%;
+  border: none;
+  margin-bottom: 10px;
+}
