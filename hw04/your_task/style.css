@@ -1,7 +1,7 @@
 body {
     font-family: "Helvetica Neue", "Helvetica", Arial, sans-serif;
 }
-a, a:hover, a:visited, a:active { 
+a, a:hover, a:visited, a:active {
     color: black;
     text-decoration: none;
 }
@@ -35,14 +35,14 @@ body {
 }
 aside {
     grid-area: left;
-    border-right: dotted #999 1px;    
+    border-right: dotted #999 1px;
 }
 header {
     position: fixed;
     width: calc(100vw - 250px);
     left: 250px;
     background: #fff;
-    border-bottom: dotted #999 1px;   
+    border-bottom: dotted #999 1px;
 }
 
 main {
@@ -55,7 +55,7 @@ main {
 
 footer {
     grid-area: bottom;
-    border-top: dotted #999 1px;   
+    border-top: dotted #999 1px;
 }
 
 /* ***********************************************************
@@ -97,7 +97,7 @@ aside a.selected, aside a:hover {
    HEADER
    *********************************************************** */
 header a,
-header a:visited, 
+header a:visited,
 header {
     padding: 10px;
     height: 100px;
@@ -143,8 +143,12 @@ header .fa-search {
    ARTISTS, ALBUMS, & TRACKS
    *********************************************************** */
 
-#tracks, #artist, #albums {
+#tracks, #albums {
     border: dotted 1px #ccc;
+    min-height: 100px;
+}
+
+#artist {
     min-height: 100px;
 }
 

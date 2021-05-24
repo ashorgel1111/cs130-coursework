@@ -16,43 +16,63 @@ const search = (ev) => {
     }
 }
 
-// const getTracks = (term) => {
-//     url = baseURL + "?type=track&q=";
-//     fetch(url)
-//       .then(response => response.json())
-//       .then(data => displayTracks(data));
-// };
-
 const getTracks = (term) => {
-  let url = `https://www.apitutor.org/spotify/simple/v1/search?type=track&q=${term}&limit=5
-`;
+  document.querySelector('#tracks').innerHTML = '';
+  let url = `https://www.apitutor.org/spotify/simple/v1/search?type=track&q=${term}&limit=5`;
   fetch(url)
     .then(response => response.json())
     .then(data => {
-      // console.log(data);
-      for (const track of data) {
-        const template = `<p>${track.name}</p>`;
-        document.querySelector('#tracks').innerHTML += template;
-        console.log(track);
+      if (data[0] == null) {
+        document.querySelector('#tracks').innerHTML = "No tracks found";
+      } else {
+        for (const track of data) {
+            template = `<section class="track-item preview" data-preview-track="${track.preview_url}" onclick="playTrack(event)">
+                          <img src="${track.album.image_url}">
+                          <i class="fas play-track fa-play" aria-hidden="true"></i>
+                          <div class="label">
+                              <h3>${track.name}</h3>
+                              <p>${track.artist.name}</p>
+                          </div>
+                      </section>`;
+          document.querySelector('#tracks').innerHTML += template;
+        }
       }
     })
 };
 
 const getAlbums = (term) => {
-    console.log(`
-        get albums from spotify based on the search term
-        "${term}" and load them into the #albums section
-        of the DOM...`);
+  document.querySelector('#albums').innerHTML = '';
+  let url = `https://www.apitutor.org/spotify/simple/v1/search?type=album&q=${term}`;
+  fetch(url)
+    .then(response => response.json())
+    .then(data => {
+      if (data[0] == null) {
+        document.querySelector('#albums').innerHTML = "No albums found";
+      } else {
+        for (const album of data) {
+            template = `<section class="album-card" id="${album.id}">
+                            <div>
+                                <img src="${album.image_url}">
+                                <h3>${album.name}</h3>
+                                <div class="footer">
+                                    <a href="${album.spotify_url}" target="_blank">
+                                        View on Spotify
+                                    </a>
+                                </div>
+                            </div>
+                        </section>`;
+            document.querySelector('#albums').innerHTML += template;
+        }
+      }
+    })
 };
-
 
 const getArtist = (term) => {
-        url = baseURL + "?type=artist&q=" + term;
-        fetch(url)
-          .then(response => response.json())
-          .then(data => displayArtist(data[0]));
+  let url = `https://www.apitutor.org/spotify/simple/v1/search?type=artist&q=${term}&limit=1`;
+  fetch(url)
+    .then(response => response.json())
+    .then(data => displayArtist(data[0]));
 };
-
 
 document.querySelector('#search').onkeyup = (ev) => {
     // Number 13 is the "Enter" key on the keyboard
@@ -63,31 +83,18 @@ document.querySelector('#search').onkeyup = (ev) => {
     }
 };
 
-// const displayTracks = (term) => {
-//   let url = `https://www.apitutor.org/spotify/simple/v1/search?type=track&q=${term}`
-//   fetch(url)
-//     .then(response => response.json())
-//     .then(data => {
-//       console.log(data)
-//     })
-// };
-// = (foundtracks) => {
-//   if (foundtracks == null) {
-//     document.querySelector('#tracks').innerHTML = "No tracks found";
-//   } else {
-//     const lenTracks = foundtracks.length;
-//     for (t = 0; t < Math.min(5, lenTracks); t++) {
-//       template = `<section class="track-item preview" data-preview-track="${foundTracks[t].preview_url}">
-//                       <img src="${foundTracks[t].album.image_url}">
-//                       <i class="fas play-track fa-play" aria-hidden="true"></i>
-//                       <div class="label">
-//                           <h3>${foundTracks[t].name}</h3>
-//                           <p>${foundTracks[t].artist.name}</p>
-//                       </div>
-//                   </section>`;
-//       document.querySelector('#tracks').innerHTML += template;}
-//   }
-// }
+const playTrack = (ev) => {
+  const elem = ev.currentTarget;
+  console.log(elem.innerHTML);
+  document.querySelector('footer .track-item.preview').innerHTML = elem.innerHTML;
+  const previewURL = elem.dataset.previewTrack;
+  if (previewURL) {
+    audioPlayer.setAudioFile(previewURL);
+    audioPlayer.play();
+  } else {
+    console.log('There is no available preview track.')
+  }
+};
 
 const displayArtist = (art) => {
   if (art == null) {
@@ -98,9 +105,7 @@ const displayArtist = (art) => {
                   <img src="${art.image_url}">
                   <h3>${art.name}</h3>
                   <div class="footer">
-                    <a href="${art.spotify_url}" target="_blank">
-                              view on spotify
-                    </a>
+                    <a href="${art.spotify_url}" target="_blank">View on Spotify</a>
                   </div>
                 </div>
               </section>`;
