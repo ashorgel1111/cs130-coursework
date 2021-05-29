@@ -54,132 +54,23 @@ html, body {
 /* Main */
 
 main {
-  padding-top: 164px;
+  padding-top: 214px;
+  padding-bottom: 50px;
   border: none;
   z-index: 1;
-}
-
-/* Welcome */
-
-#welcome {
-  border: none;
-  padding-top: 50px;
-  padding-bottom: 40px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-color: #6D3B47;
-  color: #FCF0CC;
-}
-
-#welcome p {
-  width: 80%;
-  border: none;
-  margin-bottom: 10px;
   font-family: Source Serif Pro, Arial, Serif;
   font-weight: 300;
   font-size: 1.2em;
   text-align: justify;
-  text-indent: 20px;
+  color: #FCF0CC;
+  background-color: #453A49;
 }
 
-/* Photo Carousel */
-main section {
-  display: flex;
-  justify-content: center;
-  padding-top: 50px;
-  padding-bottom: 50px;
-  background-color: #282F44;
-}
-
-#carousel {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: auto 20vh;
-    grid-template-areas:
-      "top"
-      "bottom";
-    height: 75vh;
-    width: 75vw;
-}
-#featured {
-    grid-area: top;
-}
-.cards {
-    grid-area: bottom;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin: 0;
-    /* padding-left: 10px; */
-    padding-top: 10px;
-    padding-bottom: 10px;
-    padding-left: 10px;
-    list-style: none;
-}
-.card {
-    width: 12.5%;
-    height: 100%;
-    /* padding-bottom: 10px; */
-    padding-right: 10px;
-}
-.image {
-    background-size: cover;
-    background-position: center;
-    width: 100%;
-    height: 100%;
-    cursor: pointer;
-}
-.image.active {
-    border: solid 5px black;
-}
-
-.image:hover {
-    opacity: 0.7;
-}
-
-
-.preview_box {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    padding: 0;
-}
-
-.featured_image {
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-position: center;
-    cursor: pointer;
-}
-
-.next, .prev, .close {
-    position: absolute;
-    color: white;
-    border-width: 0px;
-    font-size: 2.5em;
-}
-.next, .prev {
-    background: rgba(255,255,255,0.2);
-    border-radius: 60px;
-    width: 60px;
-    height: 60px;
-    padding-bottom: 5px;
-    z-index: 2;
-}
-.next:hover, .prev:hover, .close:hover {
-    background: rgba(255,255,255,0.4);
-}
-.prev {
-    top: 100%;
-    left: 2vw;
-}
-.next {
-    top: 100%;
-    right: 2vw;
+h1 {
+  font-family: Source Serif Pro, Arial, Serif;
+  font-weight: 500;
+  font-size: 1.5em;
+  text-align: justify;
 }
 
 /* Navigation */
