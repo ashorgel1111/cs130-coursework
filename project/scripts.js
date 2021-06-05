@@ -1,11 +1,10 @@
 const images = [
-    'images/field1.jpg',
-    'images/purple.jpg',
-    'images/jar.jpg',
-    'images/green.jpg',
-    'images/green1.jpg',
-    'images/purple1.jpg',
-    'images/magnolias.jpg',
+    'images/IMG_0638.JPG',
+    'images/Chorfoto.JPG',
+    'images/IMG_0636.JPG',
+    'images/Me.jpg',
+    'images/organ.jpg',
+    'images/IMG_0526.JPEG',
 ];
 
 const initScreen = () => {
@@ -45,7 +44,7 @@ const goNext = (ev) => {
       index = parseInt(image.dataset.index);
     }
   }
-  if (index == 6) {
+  if (index == 5) {
     index = -1;
   }
   for (const image of imageElements) {
@@ -62,7 +61,7 @@ const goBack = (ev) => {
     }
   }
   if (index == 0) {
-    index = 7;
+    index = 6;
   }
   for (const image of imageElements) {
     if (index == parseInt(image.dataset.index) + 1) {

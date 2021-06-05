@@ -11,27 +11,56 @@
     <main>
       <section id='germany'>
         <header>
-          <p>Header Tag: this will contain background about the Germany project</p>
+          <h1>Baroque Organ Research (Leipzig and Hamburg Regions, Germany)</h1>
+          <p id='germany-first'>During early spring of 2020, I received a small stipend to research and visit historic organs from the seventeenth and
+             eighteenth centuries in North Germany. My travels brought me to ten cities in four German states and allowed me
+             to record and perform on highly influential instruments in the history of Western music.
+          </p>
+          <p>The following is a short sample of media (pictures, recordings, information) gathered from my visits to several of the cities.
+          </p>
         </header>
         <div id='germany-display'>
-          <div class='card'>
-            <h1 'name'>City Name</h1>
-            <p class='summary'>Summary of city...<br>
-              <a href='#'>Link to city information</a>
-            </p>
-            <div class='images'>
-              <p>Div Tag: contains small photo carousel of two or three pictures<p>
+          <div class='name'>
+            <h1>Halle (Saale)</h1>
+          </div>
+          <div class='city_card'>
+            <div class="summary">
+              <p>Halle is located about 30 minutes from Leipzig by train and was the birthplace of composer George Frederick Handel.
+                                 The Marktkirche (Market Church) holds a historic organ from the 1660s from which the young Handel was taught by his
+                                 first keyboard and composition teacher Friedrich Wilhelm Zachow. The entire organ's mechanism and keyboard
+                                 remains intact from the time of Handel's youth.<br>
+              </p>
+              <a href='http://www.halle.de/en/Home/index.aspx'>City Homepage</a>
             </div>
-            <iframe class='media' src='#'></iframe>
+            <div class='images'>
+              <div id='carousel'>
+                <section class="preview_box">
+                    <div class="featured_image" style="background-image:url('images/marktkirche.jpeg')"></div>
+                </section>
+                <ul class="cards"></ul>
+              </div>
+            </div>
+            <div class='media'>
+              <iframe src="https://drive.google.com/file/d/10kS0UqMOi9YRmTDSgMmf2EhnETOLOlos/preview"></iframe>
+            </div>
           </div>
         </div>
+        <button class="prev">&lsaquo;</button>
+        <button class="next">&rsaquo;</button>
       </section>
       <section id='buffalo'>
-        <p>Paragraph Tag: short summary of Christmas project</p>
-        <iframe class='playlist' src="https://www.youtube.com/embed/videoseries?list=PLvax9UiOBEEqyV7bfRfeZ3IX_6Gx99-Ta">
-          iframe Tag: embeded first video in series
-        </iframe><br>
-        <a href='#'>a Tag: link to playlist concert</a>
+        <h1>2020 Remote Christmas Concert (Buffalo, NY Region)</h1>
+        <p>Due to the COVID-19 pandemic, most churches in the winter of 2020 were closed, many cancelling their Christmas worship and
+           music outright. This project enlisted the help of local churches in the region to put together a Christmas "collage"
+           of organs and performers to feature various local venues. Shared with dozens of churches in the area, the music in this project
+           was used by several churches in their own remote radio worship.
+        </p>
+        <div id='playlist-container'>
+          <iframe class='playlist' src="https://www.youtube.com/embed/videoseries?list=PLvax9UiOBEEqyV7bfRfeZ3IX_6Gx99-Ta">
+            iframe Tag: embeded first video in series
+          </iframe><br>
+          <a href="https://www.youtube.com/embed/videoseries?list=PLvax9UiOBEEqyV7bfRfeZ3IX_6Gx99-Ta">See full concert series</a>
+        </div>
       </section>
     </main>
     <nav>
@@ -44,6 +73,6 @@
       <p>Email: <i>ashorgel1111@gmail.com</i></p>
       <p>Cell: <i>(716)-331-7446</i></p>
     </footer>
-    <!-- <script type="application/javascript" src="scripts.js"></script> -->
+    <script type="application/javascript" src="script.js"></script>
   </body>
 </html>

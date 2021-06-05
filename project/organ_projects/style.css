@@ -1,13 +1,6 @@
-/* Borders are currently included for debugging purposes */
-
-/* Colors: #FCF0CC (text color), #191D32, #282F44, #453A49, #6D3B47, #BA2C73
-   URL:    https://coolors.co/191d32-282f44-453a49-6d3b47-ba2c73 */
-
-
 @import url('https://fonts.googleapis.com/css2?family=Source+Serif+Pro:ital,wght@0,300;0,400;0,600;0,700;0,900;1,300;1,400;1,600;1,700&display=swap');
 
 * {
-  /* border: solid 1px black; */
   margin: 0;
 }
 
@@ -26,9 +19,9 @@ html, body {
   justify-content: center;
   position: fixed;
   width: 100vw;
-  padding-top: 30px;
-  padding-bottom: 30px;
-  border-bottom: double 10px #FCF0CC;
+  padding-top: 5px;
+  padding-bottom: 20px;
+  border-bottom: double 7px #FCF0CC;
   z-index: 10;
   background-image: linear-gradient(to bottom right, #6D3B47, #282F44);
   color: #FCF0CC;
@@ -54,8 +47,7 @@ html, body {
 /* Main */
 
 main {
-  padding-top: 174px;
-  padding-bottom: 40px;
+  padding-top: 155px;
   border: none;
   z-index: 1;
   background-color: #191D32;
@@ -68,47 +60,103 @@ main {
   font-weight: 300;
   font-size: 1.2em;
   text-align: justify;
-  text-indent: 20px;
 }
 
 /* Germany */
 
 #germany {
-  background-color: #;
+  padding-bottom: 30px;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  /* flex-direction: column; */
+}
+
+header h1 {
+  font-size: 1.4em;
 }
 
 #germany header {
   display: block;
-  margin: 20px;
+  margin: 20px 50px;
+}
+
+#germany-first {
+  padding-top: 20px;
 }
 
 #germany-display {
   margin: 20px;
+  padding-bottom: 25px;
   background-color: #282F44;
-  width: 85%;
+  width: 70%;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
 }
 
-.card {
+.next, .prev {
+    position: absolute;
+    color: white;
+    border-width: 0px;
+    font-size: 2.5em;
+}
+.next, .prev {
+    background: rgba(255,255,255,0.2);
+    border-radius: 60px;
+    width: 60px;
+    height: 60px;
+    padding-bottom: 5px;
+    z-index: 2;
+}
+.next:hover, .prev:hover{
+    background: rgba(255,255,255,0.4);
+}
+.prev {
+    top: 100%;
+    left: 2vw;
+}
+.next {
+    top: 100%;
+    right: 2vw;
+}
+
+.city_card {
+  padding: 40px 0 15px 0;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-column-gap: 10px;
-  grid-template-rows: repeat(2, 1fr);
-  grid-row-gap: 10px;
+  grid-column-gap: 30px;
+  grid-template-rows: repeat(5, 7vh);
+  grid-row-gap: 30px;
   grid-template-areas:
-  "name media"
+  "images media"
+  "images media"
+  "images media"
+  "images summary"
   "images summary";
 }
 
 .name {
-  grid-area: name;
+  background-color: #6D3B47;
+  border-bottom: 3px solid #FCF0CC;
+  display: flex;
+  justify-content: center;
+  padding: 10px 0 5px 0;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  font-style: italic;
 }
 
 .media {
   grid-area: media;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-right: 20px;
+}
+
+.media iframe {
+  margin-top: 20px;
+  height: 250px;
+  width: 475px;
 }
 
 .images {
@@ -116,7 +164,24 @@ main {
 }
 
 .summary {
+  padding-top: 20px;
   grid-area: summary;
+  text-indent: 0;
+  font-size: 0.7em;
+  padding-right: 20px;
+}
+
+.summary a {
+  display: block;
+  color: inherit;
+  font-style: italic;
+  font-size: 1.1em;
+  text-align: center;
+}
+
+.summary a:hover {
+  color: white;
+  font-weight: bold;
 }
 
 .playlist {
@@ -124,10 +189,116 @@ main {
   height: 350px;
 }
 
+/* Photo Carousel in city card */
+
+.images {
+  display: flex;
+  justify-content: center;
+  padding-left: 30px;
+  background-color: #282F44;
+}
+
+#carousel {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: auto 20vh;
+    grid-template-areas:
+      "top"
+      "bottom";
+    height: 100%;
+    width: 100%;
+}
+#featured {
+    grid-area: top;
+}
+.cards {
+    grid-area: bottom;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0;
+    padding-top: 20px;
+    padding-bottom: 0;
+    padding-left: 10px;
+    list-style: none;
+}
+.card {
+    width: 20%;
+    height: 100%;
+    padding-right: 10px;
+    padding-bottom: 10px;
+}
+.image {
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+.image.active {
+    border: solid 5px black;
+}
+
+.image:hover {
+    opacity: 0.7;
+}
+
+.preview_box {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+}
+
+.featured_image {
+    width: 100%;
+    height: 100%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+}
+
+/* Christmas Project */
+
+#buffalo {
+  padding: 35px 20px 20px 20px;
+  background-color: #453A49;
+}
+
+#buffalo p, #buffalo h1 {
+  padding: 10px 30px;
+}
+
+#buffalo a {
+  color: inherit;
+  font-style: italic;
+  font-size: 1.1em;
+}
+
+#buffalo a:hover {
+  color: white;
+  font-weight: bold;
+}
+
+#playlist-container {
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.playlist, #playlist-container a {
+  display: block;
+  margin: 10px 120px;
+}
+
 /* Navigation */
 
 nav {
   background-color: #BA2C73;
+  border-top: 2px solid white;
+  border-bottom: 2px solid white;
   padding: 30px 0;
   display: flex;
   justify-content: center;
@@ -142,7 +313,6 @@ nav a {
   color: #FCF0CC;
   background-color: #191D32;
   border-radius: 7px;
-  /* font-style: italic; */
   font-size: 1.2em;
 }
 

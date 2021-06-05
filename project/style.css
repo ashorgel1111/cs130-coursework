@@ -1,13 +1,6 @@
-/* Borders are currently included for debugging purposes */
-
-/* Colors: #FCF0CC (text color), #191D32, #282F44, #453A49, #6D3B47, #BA2C73
-   URL:    https://coolors.co/191d32-282f44-453a49-6d3b47-ba2c73 */
-
-
 @import url('https://fonts.googleapis.com/css2?family=Source+Serif+Pro:ital,wght@0,300;0,400;0,600;0,700;0,900;1,300;1,400;1,600;1,700&display=swap');
 
 * {
-  /* border: solid 1px black; */
   margin: 0;
 }
 
@@ -26,9 +19,9 @@ html, body {
   justify-content: center;
   position: fixed;
   width: 100vw;
-  padding-top: 30px;
-  padding-bottom: 30px;
-  border-bottom: double 10px #FCF0CC;
+  padding-top: 5px;
+  padding-bottom: 20px;
+  border-bottom: double 7px #FCF0CC;
   z-index: 10;
   background-image: linear-gradient(to bottom right, #6D3B47, #282F44);
   color: #FCF0CC;
@@ -54,7 +47,7 @@ html, body {
 /* Main */
 
 main {
-  padding-top: 164px;
+  padding-top: 134px;
   border: none;
   z-index: 1;
 }
@@ -63,8 +56,8 @@ main {
 
 #welcome {
   border: none;
-  padding-top: 50px;
-  padding-bottom: 40px;
+  padding-top: 30px;
+  padding-bottom: 20px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -81,18 +74,17 @@ main {
   font-weight: 300;
   font-size: 1.2em;
   text-align: justify;
-  text-indent: 20px;
 }
 
 /* Photo Carousel */
+
 main section {
   display: flex;
   justify-content: center;
-  padding-top: 50px;
-  padding-bottom: 50px;
+  padding-top: 30px;
+  padding-bottom: 30px;
   background-color: #282F44;
 }
-
 #carousel {
     display: grid;
     grid-template-columns: 1fr;
@@ -112,7 +104,6 @@ main section {
     flex-wrap: wrap;
     justify-content: center;
     margin: 0;
-    /* padding-left: 10px; */
     padding-top: 10px;
     padding-bottom: 10px;
     padding-left: 10px;
@@ -121,7 +112,6 @@ main section {
 .card {
     width: 12.5%;
     height: 100%;
-    /* padding-bottom: 10px; */
     padding-right: 10px;
 }
 .image {
@@ -151,7 +141,8 @@ main section {
 .featured_image {
     width: 100%;
     height: 100%;
-    background-size: cover;
+    background-size: contain;
+    background-repeat: no-repeat;
     background-position: center;
     cursor: pointer;
 }
@@ -186,6 +177,8 @@ main section {
 
 nav {
   background-color: #BA2C73;
+  border-top: 2px solid white;
+  border-bottom: 2px solid white;
   padding: 30px 0;
   display: flex;
   justify-content: center;
@@ -200,7 +193,6 @@ nav a {
   color: #FCF0CC;
   background-color: #191D32;
   border-radius: 7px;
-  /* font-style: italic; */
   font-size: 1.2em;
 }
 

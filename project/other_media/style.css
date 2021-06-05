@@ -1,13 +1,6 @@
-/* Borders are currently included for debugging purposes */
-
-/* Colors: #FCF0CC (text color), #191D32, #282F44, #453A49, #6D3B47, #BA2C73
-   URL:    https://coolors.co/191d32-282f44-453a49-6d3b47-ba2c73 */
-
-
 @import url('https://fonts.googleapis.com/css2?family=Source+Serif+Pro:ital,wght@0,300;0,400;0,600;0,700;0,900;1,300;1,400;1,600;1,700&display=swap');
 
 * {
-  /* border: solid 1px black; */
   margin: 0;
 }
 
@@ -26,9 +19,9 @@ html, body {
   justify-content: center;
   position: fixed;
   width: 100vw;
-  padding-top: 30px;
-  padding-bottom: 30px;
-  border-bottom: double 10px #FCF0CC;
+  padding-top: 5px;
+  padding-bottom: 20px;
+  border-bottom: double 7px #FCF0CC;
   z-index: 10;
   background-image: linear-gradient(to bottom right, #6D3B47, #282F44);
   color: #FCF0CC;
@@ -54,8 +47,7 @@ html, body {
 /* Main */
 
 main {
-  padding-top: 214px;
-  padding-bottom: 50px;
+  padding-top: 164px;
   border: none;
   z-index: 1;
   font-family: Source Serif Pro, Arial, Serif;
@@ -66,17 +58,165 @@ main {
   background-color: #453A49;
 }
 
-h1 {
+#organ-videos {
+  margin-top: 25px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.organ-piece {
+  margin: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.organ-piece iframe {
+  width: 350px;
+  height: 210px;
+}
+
+.organ-piece h2 {
+  font-size: 0.9em;
+  font-weight: normal;
+}
+
+#organ-heading {
   font-family: Source Serif Pro, Arial, Serif;
-  font-weight: 500;
-  font-size: 1.5em;
-  text-align: justify;
+  font-weight: bold 500;
+  font-size: 1.7em;
+  text-align: center;
+}
+
+/* Sketchbook Media */
+
+#sketches {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding-top: 30px;
+  padding-bottom: 50px;
+  background-color: #282F44;
+}
+
+#sketches p, #sketches h1 {
+  text-align: center;
+}
+
+#sketches p {
+  font-size: 0.9em;
+  font-weight: normal;
+}
+
+#sketches h1 {
+  font-family: Source Serif Pro, Arial, Serif;
+  font-weight: bold 500;
+  font-size: 1.6em;
+  text-align: center;
+}
+
+#carousel-container {
+  padding-top: 40px;
+  display: flex;
+  justify-content: center;
+}
+
+#carousel {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 20vh;
+    grid-column-gap: 10px;
+    grid-row-gap: 30px;
+    grid-template-areas:
+      "top"
+      "bottom";
+    height: 65vh;
+    width: 90vw;
+}
+#featured {
+    grid-area: top;
+}
+.cards {
+    grid-area: bottom;
+    display: flex;
+    flex-wrap: wrap;
+    padding-inline-start: 0;
+    list-style: none;
+}
+.card {
+    width: 11%;
+    height: 100%;
+    padding-bottom: 10px;
+    padding-right: 10px;
+}
+.image {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+.image.active {
+    border: solid 5px black;
+}
+
+.image:hover {
+    opacity: 0.7;
+}
+
+.preview_box {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+}
+
+.featured_image {
+    width: 100%;
+    height: 100%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+}
+
+.next, .prev {
+    color: white;
+    border-width: 0px;
+    font-size: 2.5em;
+}
+.next, .prev {
+    margin-top: 25px;
+    background: rgba(255,255,255,0.2);
+    border-radius: 60px;
+    width: 60px;
+    height: 60px;
+    padding-bottom: 5px;
+}
+.next:hover, .prev:hover {
+    background: rgba(255,255,255,0.4);
+}
+.prev {
+    top: 100%;
+    left: 2vw;
+    margin-right: 30px;
+}
+.next {
+    top: 100%;
+    right: 2vw;
+    margin-left: 27px;
 }
 
 /* Navigation */
 
 nav {
   background-color: #BA2C73;
+  border-top: 2px solid white;
+  border-bottom: 2px solid white;
   padding: 30px 0;
   display: flex;
   justify-content: center;
@@ -91,7 +231,6 @@ nav a {
   color: #FCF0CC;
   background-color: #191D32;
   border-radius: 7px;
-  /* font-style: italic; */
   font-size: 1.2em;
 }
 
